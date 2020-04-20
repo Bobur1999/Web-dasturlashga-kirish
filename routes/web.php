@@ -34,4 +34,8 @@ Route::namespace('Admin')->name('admin.')->prefix('admin') -> group(function(){
     Route::resource('sport', 'SportController');
     Route::resource('dunyo', 'MahallaController');
     Route::resource('texnologiya', 'TexnologiyaController');
+    //Feedback routes
+    Route::get('feedback', 'FeedbackController@index')->name('feedbacks.index');
+    Route::get('feedback/{id}/show', 'FeedbackController@show')->name('feedbacks.show');
+    Route::delete('feedback/{id}/delete', 'FeedbackController@delete')->name('feedbacks.delete');
 });

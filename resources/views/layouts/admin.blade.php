@@ -1,3 +1,7 @@
+@php
+  use App\feedback;
+  $new_messages =  feedback::unreaded()->get();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +80,12 @@
           <span>Texnologiya yangiliklari</span>
         </a>
       </li>
-      
+      <li class="nav-item {{ request()->is('admin/feedbacks*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{route('admin.feedbacks.index')}}" >
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Xabarlar</span>
+        </a>
+      </li>
     </ul>
     <!-- End of Sidebar -->
 
@@ -129,6 +138,38 @@
               </div>
             </li>
 
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">{{ count($new_messages) }}</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Yangi kelgan xabarlar
+                </h6>
+                
+                @foreach( $new_messages as $item)
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.feedbacks.show', $item->id) }}">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="{{ asset('dashboard/img/user.png') }}" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">{{ $item->subject }}.</div>
+                    <div class="small text-gray-500">{{ $item->name }} · {{ $item->created_at->format( 'H:i  d.m.Y' ) }}</div>
+                  </div>
+                </a>
+                @endforeach
+               
+                <a class="dropdown-item text-center small text-gray-500" href="{{ route('admin.feedbacks.index')}}">Barcha xabarlar</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
             
 
           </ul>
@@ -168,8 +209,8 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+  <!-- Logout Modal-->
   
-
   <!-- Bootstrap core JavaScript-->
   <script src="/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

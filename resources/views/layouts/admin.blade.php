@@ -76,12 +76,7 @@
           <span>Texnologiya yangiliklari</span>
         </a>
       </li>
-      <li class="nav-item {{ request()->is('admin/feedbacks*') ? 'active' : '' }}">
-        <a class="nav-link" href="{{route('admin.feedbacks.index')}}" >
-          <i class="fas fa-fw fa-envelope"></i>
-          <span>Xabarlar</span>
-        </a>
-      </li>
+      
     </ul>
     <!-- End of Sidebar -->
 
@@ -134,7 +129,7 @@
               </div>
             </li>
 
-            $$$$$
+            
 
           </ul>
 
@@ -173,28 +168,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Boshqaruvdan chiqasizmi?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Agar tizimdan chiqmoqchi bo'lsangiz "Ha" tugmasini bosing.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Bekor</button>
-          
-          <form method="POST" action="{{route('logout')}}">
-          @csrf
-          <button class="btn btn-primary" type="submit">Ha</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- Bootstrap core JavaScript-->
   <script src="/dashboard/vendor/jquery/jquery.min.js"></script>

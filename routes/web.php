@@ -25,6 +25,7 @@ Route::get('/sport', 'SiteController@sport')->name('sport');
 Route::get('/texnologiya', 'SiteController@texnologiya')->name('texnologiya');
 //Feedback
 Route::get('/feedback', 'SiteController@aloqa')->name('aloqa');
+Route::post('/feedback', 'SiteController@feedbackStore')->name('contact.store');
 //Admin routes
 Route::namespace('Admin')->name('admin.')->prefix('admin') -> group(function(){
     Route::get('/', function(){

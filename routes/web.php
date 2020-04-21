@@ -27,7 +27,7 @@ Route::get('/texnologiya', 'SiteController@texnologiya')->name('texnologiya');
 Route::get('/feedback', 'SiteController@aloqa')->name('aloqa');
 Route::post('/feedback', 'SiteController@feedbackStore')->name('contact.store');
 //Admin routes
-Route::namespace('Admin')->name('admin.')->prefix('admin') -> group(function(){
+Route::namespace('Admin')->middleware('auth')->name('admin.')->prefix('admin') -> group(function(){
     Route::get('/', function(){
         return redirect()->route('admin.dunyo.index');
     })->name('dashboard');
@@ -40,6 +40,9 @@ Route::namespace('Admin')->name('admin.')->prefix('admin') -> group(function(){
     Route::get('feedback/{id}/show', 'FeedbackController@show')->name('feedbacks.show');
     Route::delete('feedback/{id}/delete', 'FeedbackController@delete')->name('feedbacks.delete');
 });
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/home', 'HomeController@index')->name('home');

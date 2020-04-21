@@ -40,3 +40,6 @@ Route::namespace('Admin')->name('admin.')->prefix('admin') -> group(function(){
     Route::get('feedback/{id}/show', 'FeedbackController@show')->name('feedbacks.show');
     Route::delete('feedback/{id}/delete', 'FeedbackController@delete')->name('feedbacks.delete');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

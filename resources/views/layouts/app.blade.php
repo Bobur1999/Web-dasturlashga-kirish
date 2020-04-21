@@ -45,9 +45,9 @@
     </div>
   </nav>
   <!-- Header end -->
-
-    @yield('content')
-
+  <div class="bg-light">
+      @yield('content')  
+  </div>
   <!-- Footer -->
   <footer>
     <div class="container">

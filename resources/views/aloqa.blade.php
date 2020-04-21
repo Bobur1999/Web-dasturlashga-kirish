@@ -19,7 +19,7 @@
   <section class="section-margin">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-7 mb-5">
           @if(session()->has('success'))
               <div class="alert alert-success">
                   {{session()->get('success')}}
@@ -38,28 +38,28 @@
             @csrf
             <div class="row">
               <div class="col-12">
-                <div class="form-group">
-                    <textarea  class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message">{{ old('message') }}</textarea>
+                <div class="row form-group">
+                    <textarea  class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Xabaringizni kiriting">{{ old('message') }}</textarea>
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="form-group">
-                  <input value="{{ old('name') }}" class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                <div class="row form-group">
+                  <input value="{{ old('name') }}" class="form-control" name="name" id="name" type="text" placeholder="Ism sharifingizni kiriting">
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="form-group">
-                  <input value="{{ old('email') }}" class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                <div class="row form-group">
+                  <input value="{{ old('email') }}" class="form-control" name="email" id="email" type="email" placeholder="Emailingizni kiriting">
                 </div>
               </div>
               <div class="col-12">
-                <div class="form-group">
-                  <input value="{{ old('subject') }}" class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                <div class="row form-group">
+                  <input value="{{ old('subject') }}" class="form-control" name="subject" id="subject" type="text" placeholder="Xabar mavzusini kiriting">
                 </div>
               </div>
             </div>
-            <div class="form-group mt-3">
-              <button type="submit" class="btn btn-primary btn-block">Yuborish</button>
+            <div class="row form-group mt-3">
+              <button type="submit" class="btn btn-secondary btn-md text-white">Yuborish</button>
             </div>
           </form>
         </div>

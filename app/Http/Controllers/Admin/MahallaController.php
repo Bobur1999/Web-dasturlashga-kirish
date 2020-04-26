@@ -109,20 +109,47 @@ class MahallaController extends Controller
     {
         $mahalla = mahalla::findOrFail($id);
 
-      $request -> validate([
-        'title'=> 'required',
-        'short'=> 'required',
-        'content'=> 'required|min:5'
-      ]);
+        $request -> validate([
+            'title'=> 'required',
+            'short'=> 'required',
+            'content'=> 'required|min:5'
+        ]);
 
-      $mahalla->update([
-        'title'=>$request->post('title'),
-        'short'=>$request->post('short'),
-        'content'=>$request->post('content'),
-    
-    ]);
+        if($request->file('img'))
+        {
+            //Delete Old File
+            Storage::disk('public')->delete([
+                $mahalla->img,
+                $mahalla->thumb
+            ]);
 
-    return redirect()->route('admin.mahalla.index')->with('success','Item update!');
+            $img_name = $request->file('img')->store('mahalla', ['disk' => 'public']);
+            $thumb_name = 'thumbs/'.$img_name;
+            //Create thumbnail
+            $full_path = storage_path('app/public/'.$img_name);
+            $full_thumb_path = storage_path('app/public/'.$thumb_name);
+            $thumb = Image::make($full_path);
+            
+            // kvadrat shaklida proporsiya bn qirqib olish
+            $thumb->fit(350, 350, function($constraint){
+                $constraint->aspectRatio();
+            })->save($full_thumb_path);
+        }
+        else 
+        {
+            $img_name = $mahalla->img;
+            $thumb_name = $mahalla->thumb;
+        }
+
+        $mahalla->update([
+            'title'=>$request->post('title'),
+            'short'=>$request->post('short'),
+            'content'=>$request->post('content'),
+            'img' => $img_name,
+            'thumb' =>$thumb_name,
+        ]);
+
+        return redirect()->route('admin.mahalla.index')->with('success','Item update!');
 
     }
 

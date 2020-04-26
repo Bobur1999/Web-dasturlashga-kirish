@@ -28,6 +28,13 @@
                 <input class="form-control" value="{{$texnologiya->title}}" name="title" type="text">
             </div>
 
+            <div class="form-group">
+                <img src="/storage/{{$texnologiya->thumb}}" width="200px" class="img img-thumbnail" alt="">
+            </div>
+            <div class="form-group">
+                <label for="">Rasm</label>
+                <input class="form-control" name="img" type="file">
+            </div>
             
             <div class="form-group">
                 <label for="">Qisqacha</label>

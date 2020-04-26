@@ -28,6 +28,13 @@
                 <input class="form-control" value="{{$sport->title}}" name="title" type="text">
             </div>
 
+            <div class="form-group">
+                <img src="/storage/{{$sport->thumb}}" width="200px" class="img img-thumbnail" alt="">
+            </div>
+            <div class="form-group">
+                <label for="">Rasm</label>
+                <input class="form-control" name="img" type="file">
+            </div>
             
             <div class="form-group">
                 <label for="">Qisqacha</label>

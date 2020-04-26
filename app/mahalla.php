@@ -8,5 +8,5 @@ class mahalla extends Model
 {
     public $table = 'mahalla';
     
-    public $fillable = ['title', 'short', 'content', 'img', 'views'];
+    public $fillable = ['title', 'short', 'content', 'img', 'thumb', 'views'];
 }

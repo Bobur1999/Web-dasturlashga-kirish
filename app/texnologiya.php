@@ -8,5 +8,5 @@ class texnologiya extends Model
 {
     public $table = 'texnologiya';
     
-    public $fillable = ['title', 'short', 'content', 'img', 'views'];
+    public $fillable = ['title', 'short', 'content', 'img', 'thumb', 'views'];
 }

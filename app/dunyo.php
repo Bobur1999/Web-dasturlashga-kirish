@@ -8,5 +8,5 @@ class dunyo extends Model
 {
     public $table = 'dunyo';
     
-    public $fillable = ['title', 'short', 'content', 'img', 'views'];
+    public $fillable = ['title', 'short', 'content', 'img', 'thumb', 'views'];
 }

@@ -32,9 +32,11 @@
                 @foreach($texnologiya as $item)
                 <tr>
                     <td> 
-                         {{ $item->title }}
+                        <img class="img img-thumbnail" width="80px" src=" {{ '/storage/'.$item->thumb }} " alt="{{ $item->title }}">
                     </td>
-                    <td> {{$item->title}}  </td>
+                    <td> 
+                        {{$item->title}}  
+                    </td>
                     <td>
                         <a class="btn btn-sm btn-white float-left " href="{{route('admin.texnologiya.show', $item->id)}}">
                             <i class="fa fa-eye"></i>

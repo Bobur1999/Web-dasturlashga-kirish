@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\mahalla;
 use Illuminate\Support\Facades\Storage;
+use Image;
 
 class MahallaController extends Controller
 {
@@ -47,11 +48,25 @@ class MahallaController extends Controller
             'img' => 'required|file|mimes:jpeg,jpg,png'
         ]);
 
+        //Upload image to storage
+        $img_name=$request->file('img')->store('mahalla', ['disk' => 'public']);
+        
+        // Create thumbnail
+        $full_path=storage_path('app/public/'.$img_name);
+        $full_thumb_path=storage_path('app/public/thumbs/'.$img_name);
+        $thumb=Image::make($full_path);
+        
+        // kvadrat
+        $thumb->fit(350, 350, function($constraint){
+            $constraint->aspectRatio();
+        })->save($full_thumb_path);
+
         mahalla::create([
             'title' => $request->post('title'),
             'short' => $request->post('short'),
             'content' => $request->post('content'),
-            'img' => $request->file('img')->store('mahalla', ['disk' => 'public']),
+            'img' => $img_name,
+            'thumb' => 'thumbs/'.$img_name,
         ]);
 
         return redirect()->route('admin.mahalla.index')->with('success', 'Item created!');

@@ -8,5 +8,5 @@ class sport extends Model
 {
     public $table = 'sport';
     
-    public $fillable = ['title', 'short', 'content', 'img', 'views'];
+    public $fillable = ['title', 'short', 'content', 'img', 'thumb', 'views'];
 }

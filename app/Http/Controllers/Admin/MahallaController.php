@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\mahalla;
+use Illuminate\Support\Facades\Storage;
 
 class MahallaController extends Controller
 {
@@ -14,7 +16,9 @@ class MahallaController extends Controller
      */
     public function index()
     {
-        return view('admin/mahalla/index');
+        $mahalla = mahalla::all();
+
+        return view('admin/mahalla/index', compact('mahalla'));
     }
 
     /**
@@ -24,7 +28,7 @@ class MahallaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.mahalla.create');
     }
 
     /**
@@ -35,7 +39,22 @@ class MahallaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+
+            'title'=> 'required',
+            'short'=> 'required',
+            'content'=> 'required',
+            'img' => 'required|file|mimes:jpeg,jpg,png'
+        ]);
+
+        mahalla::create([
+            'title' => $request->post('title'),
+            'short' => $request->post('short'),
+            'content' => $request->post('content'),
+            'img' => $request->file('img')->store('mahalla', ['disk' => 'public']),
+        ]);
+
+        return redirect()->route('admin.mahalla.index')->with('success', 'Item created!');
     }
 
     /**
@@ -46,7 +65,9 @@ class MahallaController extends Controller
      */
     public function show($id)
     {
-        //
+        $mahalla = mahalla::findOrFail($id);
+
+        return view('admin.mahalla.show', compact('mahalla'));
     }
 
     /**
@@ -57,7 +78,9 @@ class MahallaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mahalla = mahalla::findOrFail($id);
+
+        return view('admin.mahalla.edit', compact('mahalla'));
     }
 
     /**
@@ -69,7 +92,23 @@ class MahallaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mahalla = mahalla::findOrFail($id);
+
+      $request -> validate([
+        'title'=> 'required',
+        'short'=> 'required',
+        'content'=> 'required|min:5'
+      ]);
+
+      $mahalla->update([
+        'title'=>$request->post('title'),
+        'short'=>$request->post('short'),
+        'content'=>$request->post('content'),
+    
+    ]);
+
+    return redirect()->route('admin.mahalla.index')->with('success','Item update!');
+
     }
 
     /**
@@ -80,6 +119,11 @@ class MahallaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = mahalla::findOrFail($id);
+        
+        $delete -> delete();
+
+        return redirect()->route('admin.mahalla.index')->with('delete', 'Item delete!');
+
     }
 }

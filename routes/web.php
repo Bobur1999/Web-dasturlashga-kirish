@@ -33,7 +33,7 @@ Route::namespace('Admin')->middleware('auth')->name('admin.')->prefix('admin') -
     })->name('dashboard');
     Route::resource('mahalla', 'MahallaController');  
     Route::resource('sport', 'SportController');
-    Route::resource('dunyo', 'MahallaController');
+    Route::resource('dunyo', 'DunyoController');
     Route::resource('texnologiya', 'TexnologiyaController');
     //Feedback routes
     Route::get('feedback', 'FeedbackController@index')->name('feedbacks.index');

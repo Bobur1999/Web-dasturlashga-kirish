@@ -20,6 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -32,6 +33,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         
       <ul class="navbar-nav ml-auto">
+
         <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
         <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
@@ -39,6 +41,19 @@
         <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
+        <li>
+            <form method="GET" action="#">
+              <div class="form-group">
+                <div class="input-group mb-8">
+                  <input type="text" name="key" class="form-control" placeholder="Qidirish">
+                  <div class="input-group-append">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+        </li>
+
       </ul>
 
       </div>
@@ -49,10 +64,35 @@
       @yield('content')  
   </div>
   <!-- Footer -->
-  <footer>
+  <footer class="bg-dark">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+
+      <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
+      <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{route('texnologiya')}}">Texnologiya</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
+      <li>
+          <form method="GET" action="#">
+            <div class="form-group">
+              <div class="input-group mb-8">
+                <input type="text" name="key" class="form-control" placeholder="Qidirish">
+                <div class="input-group-append">
+                  <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+      </li>
+
+      </ul>
+
+        <div class="col-lg-12 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
               <a href="#">
@@ -92,6 +132,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 
 </body>
 

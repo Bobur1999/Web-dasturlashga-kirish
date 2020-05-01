@@ -93,55 +93,20 @@
                 </aside>
             </div>
         </div>         
-
-        <div class="col-sm-6">
-            <div class="card">
-            <div class="card-body">
-                <a href="#" class=""><h5 class="card-title">Special title treatment</h5></a>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <i class="fa fa-eye">12</i>
-                ||
-                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+        @foreach( $texnologiya as $item)
+            <div class="col-sm-6 p-2">
+                <div class="media border">
+                    <img class="mr-3" width="100px" src="{{ asset('dashboard/img/user.png') }}" alt="post">
+                    <div class="media-body">
+                        <a href="#" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                        <p class="card-text">{{$item->short}}</p>
+                        <i class="fa fa-eye">12</i>
+                        ||
+                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="card">
-            <div class="card-body">
-                <a href="#" class=""><h5 class="card-title">Special title treatment</h5></a>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <i class="fa fa-eye">12</i>
-                ||
-                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="card">
-            <div class="card-body">
-                <a href="#" class=""><h5 class="card-title">Special title treatment</h5></a>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <i class="fa fa-eye">12</i>
-                ||
-                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="card">
-            <div class="card-body">
-                <a href="#" class=""><h5 class="card-title">Special title treatment</h5></a>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <i class="fa fa-eye">12</i>
-                ||
-                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-            </div>
-            </div>
-        </div>
-            
+            @endforeach
     </div>
   </div>
 

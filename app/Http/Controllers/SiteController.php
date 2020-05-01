@@ -47,19 +47,27 @@ class SiteController extends Controller
     // Yangiliklar
     public function mahalliy()
     {
-        return view('mahalliy');
+        $mahalla = mahalla::all();
+
+        return view('mahalliy', compact('mahalla'));
     }
     public function dunyo()
     {
-        return view('dunyo');
+        $dunyo = dunyo::all();
+
+        return view('dunyo', compact('dunyo'));
     }
     public function texnologiya()
     {
-        return view('texnologiya');
+        $texnologiya = texnologiya::all();
+
+        return view('texnologiya', compact('texnologiya'));
     }
     public function sport()
     {
-        return view('sport');
+        $sport = sport::all();
+
+        return view('sport', compact('sport'));
     }
     //Batafsil qismi
     public function batafsil()

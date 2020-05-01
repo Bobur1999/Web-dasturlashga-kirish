@@ -23,6 +23,8 @@ Route::get('/dunyo', 'SiteController@dunyo')->name('dunyo');
 Route::get('/sport', 'SiteController@sport')->name('sport');
 //Texnologiya yangiliklar
 Route::get('/texnologiya', 'SiteController@texnologiya')->name('texnologiya');
+// batafsil qismi
+Route::get('/batafsil', 'SiteController@batafsil')->name('batafsil');
 //Feedback
 Route::get('/feedback', 'SiteController@aloqa')->name('aloqa');
 Route::post('/feedback', 'SiteController@feedbackStore')->name('contact.store');

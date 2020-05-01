@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Feedback;
+use App\feedback;
+use App\dunyo;
+use App\sport;
+use App\mahalla;
+use App\texnologiya;
 
 class SiteController extends Controller
 {
     public function home()
     {
         return view('home');
-    }
-    public function mahalliy()
-    {
-        return view('mahalliy');
     }
     public function about()
     {
@@ -22,7 +22,7 @@ class SiteController extends Controller
     public function aloqa()
     {
         return view('aloqa');
-    }
+    }   
     // Teskari Aloqa
     public function feedbackStore(Request $request)
     {
@@ -44,6 +44,11 @@ class SiteController extends Controller
                 ->route('aloqa')
                 ->with('success', 'Xabar uchun rahmat! Tez orada sizga javob qaytaramiz.');
     }
+    // Yangiliklar
+    public function mahalliy()
+    {
+        return view('mahalliy');
+    }
     public function dunyo()
     {
         return view('dunyo');
@@ -55,5 +60,10 @@ class SiteController extends Controller
     public function sport()
     {
         return view('sport');
+    }
+    //Batafsil qismi
+    public function batafsil()
+    {
+        return view('batafsil');
     }
 }

@@ -69,9 +69,41 @@ class SiteController extends Controller
 
         return view('sport', compact('sport'));
     }
-    //Batafsil qismi
-    public function batafsil()
+    //Mahalliy batafsil qismi
+    public function batafsil1($id)
     {
-        return view('batafsil');
+        $item = mahalla::findOrFail($id);
+
+        $item -> increment('views');
+        
+        return view('batafsil', compact('item'));
     }
+    
+    public function batafsil2($id)
+    {
+        $item = dunyo::findOrFail($id);
+
+        $item -> increment('views');
+        
+        return view('batafsil', compact('item'));
+    }
+    
+    public function batafsil3($id)
+    {
+        $item = texnologiya::findOrFail($id);
+
+        $item -> increment('views');
+        
+        return view('batafsil', compact('item'));
+    }
+    
+    public function batafsil4($id)
+    {
+        $item = sport::findOrFail($id);
+
+        $item -> increment('views');
+        
+        return view('batafsil', compact('item'));
+    }
+
 }

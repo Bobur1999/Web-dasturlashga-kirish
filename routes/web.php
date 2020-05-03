@@ -24,7 +24,10 @@ Route::get('/sport', 'SiteController@sport')->name('sport');
 //Texnologiya yangiliklar
 Route::get('/texnologiya', 'SiteController@texnologiya')->name('texnologiya');
 // batafsil qismi
-Route::get('/batafsil', 'SiteController@batafsil')->name('batafsil');
+Route::get('/batafsil1/{id}', 'SiteController@batafsil1')->name('batafsil1');
+Route::get('/batafsil2/{id}', 'SiteController@batafsil2')->name('batafsil2');
+Route::get('/batafsil3/{id}', 'SiteController@batafsil3')->name('batafsil3');
+Route::get('/batafsil4/{id}', 'SiteController@batafsil4')->name('batafsil4');
 //Feedback
 Route::get('/feedback', 'SiteController@aloqa')->name('aloqa');
 Route::post('/feedback', 'SiteController@feedbackStore')->name('contact.store');

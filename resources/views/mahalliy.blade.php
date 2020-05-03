@@ -27,6 +27,7 @@
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        
                     </div>
                 </div>
             </div>
@@ -42,9 +43,10 @@
                                 <h3>title</h3>
                                 </a>
                                 <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                <small class="text-muted">
+                                    <i class="fa fa-eye">12</i><br>
+                                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                </small>
                                 </p>
                             </div>
                         </div>
@@ -96,13 +98,18 @@
             @foreach( $mahalla as $item)
             <div class="col-sm-6 p-2">
                 <div class="media border">
-                    <img class="mr-3" width="100px" src="{{ asset('dashboard/img/user.png') }}" alt="post">
+                    <img class="mr-3" width="100px" src="{{ '/storage/'.$item->thumb }}" alt="post">
                     <div class="media-body">
-                        <a href="#" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                        <a href="{{route('batafsil1', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
                         <p class="card-text">{{$item->short}}</p>
-                        <i class="fa fa-eye">12</i>
-                        ||
-                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                        <p class="card-text">
+                        <small class="text-muted">
+                            <i class="fa fa-eye">{{$item -> views}}</i>
+                            ||
+                            <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                        </small>
+                        </p>
+
                     </div>
                 </div>
             </div>

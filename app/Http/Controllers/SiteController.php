@@ -13,7 +13,29 @@ class SiteController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $mahalla = mahalla::orderBy('id', 'DESC')->limit(1)->get();
+        $dunyo = dunyo::orderBy('id', 'DESC')->limit(1)->get();
+        $texnologiya = texnologiya::orderBy('id', 'DESC')->limit(1)->get();
+        $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
+
+
+        $a = mahalla::orderBy('id', 'DESC');
+        $b = dunyo::orderBy('id', 'DESC')->union($a);          
+        $c = sport::orderBy('id', 'DESC')->union($b);
+        $d = texnologiya::orderBy('id', 'DESC')->union($c)->get();
+                        
+        $union = $d;
+
+
+        return view('home',[
+            
+            'mahalla'=>$mahalla,
+            'dunyo'=>$dunyo,
+            'texnologiya'=>$texnologiya,
+            'sport'=>$sport,
+            'union'=>$union
+            
+        ]);
     }
     public function about()
     {
@@ -47,7 +69,7 @@ class SiteController extends Controller
     // Yangiliklar
     public function mahalliy()
     {
-        $mahalla = mahalla::all();
+        $mahalla = mahalla::orderBy('id', 'DESC')->get();
 
         return view('mahalliy', compact('mahalla'));
     }

@@ -33,44 +33,76 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="card bg-dark text-white">
-                    <img class="card-img" src="{{ asset('1.jpeg') }}" width="800px" height="450px" alt="Card image">
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text">Last updated 3 mins ago</p>
+                    @foreach($mahalla as $item)
+                    <div class="card bg-dark text-white">
+                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title">{{$item->title}}</h5>
+                        <p class="card-text">{{$item->short}}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fa fa-eye">{{$item -> views}}</i>
+                                ||
+                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                            </small>
+                        </p>
+                        </div>
                     </div>
-                  </div>
+                    @endforeach
                 </div>
                 <div class="carousel-item">
-                  <div class="card bg-dark text-white">
-                    <img class="card-img" src="{{ asset('1.jpeg') }}" width="800px" height="450px" alt="Card image">
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text">Last updated 3 mins ago</p>
+                    @foreach($dunyo as $item)
+                    <div class="card bg-dark text-white">
+                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title">{{$item->title}}</h5>
+                        <p class="card-text">{{$item->short}}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fa fa-eye">{{$item -> views}}</i>
+                                ||
+                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                            </small>
+                        </p>
+                        </div>
                     </div>
-                  </div>
+                    @endforeach
                 </div>
                 <div class="carousel-item">
-                  <div class="card bg-dark text-white">
-                    <img class="card-img" src="{{ asset('1.jpeg') }}" width="800px" height="450px" alt="Card image">
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text">Last updated 3 mins ago</p>
+                    @foreach($texnologiya as $item)
+                    <div class="card bg-dark text-white">
+                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title">{{$item->title}}</h5>
+                        <p class="card-text">{{$item->short}}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fa fa-eye">{{$item -> views}}</i>
+                                ||
+                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                            </small>
+                        </p>
+                        </div>
                     </div>
-                  </div>
+                    @endforeach
                 </div>
                 <div class="carousel-item">
-                  <div class="card bg-dark text-white">
-                    <img class="card-img" src="{{ asset('1.jpeg') }}" width="800px" height="450px" alt="Card image">
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text">Last updated 3 mins ago</p>
+                    @foreach($sport as $item)
+                    <div class="card bg-dark text-white">
+                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title">{{$item->title}}</h5>
+                        <p class="card-text">{{$item->short}}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fa fa-eye">{{$item -> views}}</i>
+                                ||
+                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                            </small>
+                        </p>
+                        </div>
                     </div>
-                  </div>
+                    @endforeach
                 </div>
             </div>
             
@@ -149,313 +181,25 @@
   <div class="container">
     <div class="row">
 
-    <div class="col-lg-12">
-        <hr>
-        <h3 class="mt-4 mb-4 text-center text-uppercase text-primary">Mahalliy yangiliklar</h3>
-    </div>
-
-    <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
+        @foreach( $union as $item)
         <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
+            <div class="">
+                <img class="mr-3" width="200px" src="{{ '/storage/'.$item->thumb }}" alt="post">
                 <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
+                    <a href="{{route('batafsil1', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                    <p class="card-text">{{$item->short}}</p>
                     <p class="card-text">
                     <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
+                        <i class="fa fa-eye">{{$item -> views}}</i>
                         ||
-                        <i class="fa fa-calendar">created_at</i>
+                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
                     </small>
                     </p>
 
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-          <hr>
-          <h3 class="mt-4 mb-4 text-center text-uppercase text-primary">Dunyo yangiliklari</h3>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-          <hr>
-          <h3 class="mt-4 mb-4 text-center text-uppercase text-primary">Texnologiya yangiliklari</h3>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-          <hr>
-          <h3 class="mt-4 mb-4 text-center text-uppercase text-primary">Sport yangiliklari</h3>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 p-2">
-            <div class="media border">
-                <img class="mr-3" width="100px" src="{{ asset('1.jpeg') }}" alt="post">
-                <div class="media-body">
-                    <a href="#" class=""><h5 class="card-title">title</h5></a>
-                    <p class="card-text">short</p>
-                    <p class="card-text">
-                    <small class="text-muted">
-                        <i class="fa fa-eye">views</i>
-                        ||
-                        <i class="fa fa-calendar">created_at</i>
-                    </small>
-                    </p>
-
-                </div>
-            </div>
-        </div>
+        @endforeach
     
     </div>
   </div>

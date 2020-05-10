@@ -1,0 +1,117 @@
+@extends('layouts/app', ['title' => 'Qidiruv'])
+
+@section('content')
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/header.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+              <h1>Yangiliklar</h1>
+              <span class="subheading">qidiruv qismi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+        <div class="row">
+
+           @if(!count($results))
+              <div class="col-lg-9 p-2 alert alert-primary">
+                  Sizning "{{ request()->get('key') }}" so'rovingiz bo'yicha hech nima topilmadi.
+              </div>
+            @endif       
+            
+            
+            <div class="col-lg-9 p-2">
+            @foreach( $results as $item)
+                <div class="p-2">
+                    <img class="card-img-top" src="{{ '/storage/'.$item->img }}" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                        <p class="card-text">{{$item->short}}</p>
+                        <p class="card-text">
+                        <small class="text-muted">
+                            <i class="fa fa-eye">{{$item -> views}}</i>
+                            ||
+                            <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                        </small>
+                        </p>
+                        
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            
+            
+                        
+            <div class="col-lg-3" >
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Ko'p o'qilganlar</h3>
+                        <div class="media post_item">
+                            <img width="80px" src="thumb" alt="post">
+                            <div class="media-body">
+                                <a href="">
+                                <h3>title</h3>
+                                </a>
+                                <p>
+                                <small class="text-muted">
+                                    <i class="fa fa-eye">12</i><br>
+                                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                </small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media post_item">
+                            <img width="80px" src="thumb" alt="post">
+                            <div class="media-body">
+                                <a href="">
+                                <h3>title</h3>
+                                </a>
+                                <p>
+                                <i class="fa fa-eye">12</i>
+                                ||
+                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media post_item">
+                            <img width="80px" src="thumb" alt="post">
+                            <div class="media-body">
+                                <a href="">
+                                <h3>title</h3>
+                                </a>
+                                <p>
+                                <i class="fa fa-eye">12</i>
+                                ||
+                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media post_item">
+                            <img width="80px" src="thumb" alt="post">
+                            <div class="media-body">
+                                <a href="">
+                                <h3>title</h3>
+                                </a>
+                                <p>
+                                <i class="fa fa-eye">12</i>
+                                ||
+                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
+                                </p>
+                            </div>
+                        </div>                          
+                    </aside>
+                </div>
+            </div>  
+        </div>
+  </div>
+
+@endsection

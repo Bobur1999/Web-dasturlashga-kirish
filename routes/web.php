@@ -31,6 +31,8 @@ Route::get('/batafsil4/{id}', 'SiteController@batafsil4')->name('batafsil4');
 //Feedback
 Route::get('/feedback', 'SiteController@aloqa')->name('aloqa');
 Route::post('/feedback', 'SiteController@feedbackStore')->name('contact.store');
+//Search
+Route::get('/search', 'SiteController@search')->name('search');
 //Admin routes
 Route::namespace('Admin')->middleware('auth')->name('admin.')->prefix('admin') -> group(function(){
     Route::get('/', function(){

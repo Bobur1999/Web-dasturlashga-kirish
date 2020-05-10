@@ -42,10 +42,10 @@
         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
         <li>
-            <form method="GET" action="#">
+            <form method="GET" action="{{route('search')}}">
               <div class="form-group">
                 <div class="input-group mb-8">
-                  <input type="text" name="key" class="form-control" placeholder="Qidirish">
+                  <input type="text" value="" name="key" class="form-control" placeholder="Qidirish">
                   <div class="input-group-append">
                     <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                   </div>

@@ -106,4 +106,35 @@ class SiteController extends Controller
         return view('batafsil', compact('item'));
     }
 
+    public function search(Request $request)
+    {
+        $key = $request->get('key');
+        $key = '%'.trim($key).'%';
+
+        $a = mahalla::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key);
+
+        $b = dunyo::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->union($a);
+                   
+        $c = sport::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->union($b);
+                    
+        $d = texnologiya::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->union($c)
+                    ->get();
+
+        $results = $d;
+
+
+        return view('search', compact('results'));
+    }
+
 }

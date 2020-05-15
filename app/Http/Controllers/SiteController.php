@@ -215,7 +215,7 @@ class SiteController extends Controller
 
         $results = $dunyo;
 
-        return view('search', compact('results'));
+        return view('search2', compact('results'));
     }
 
     public function search3(Request $request)
@@ -230,7 +230,7 @@ class SiteController extends Controller
 
         $results = $texnologiya;
 
-        return view('search', compact('results'));
+        return view('search3', compact('results'));
     }
 
     public function search4(Request $request)
@@ -245,7 +245,7 @@ class SiteController extends Controller
 
         $results = $sport;
 
-        return view('search', compact('results'));
+        return view('search4', compact('results'));
     }
 
 }

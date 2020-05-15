@@ -25,13 +25,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            @endif
+            @endif       
             <div class="col-lg-8 col-md-10 mx-auto p-2">       
             @foreach( $results as $item)
                 <div class="media border p-2">
                     <img class="mr-3" width="200px" src="{{ '/storage/'.$item->thumb }}" alt="post">
                     <div class="media-body">
-                        <a href="{{route('batafsil1', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                        <a href="{{route('batafsil2', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
                         <p class="card-text">{{$item->short}}</p>
                         <p class="card-text">
                         <small class="text-muted">

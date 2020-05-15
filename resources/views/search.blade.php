@@ -16,16 +16,16 @@
     </div>
   </header>
 
-  <div class="container">
+    <div class="container">
         <div class="row">
-
            @if(!count($results))
-              <div class="col-lg-9 p-2 alert alert-primary">
-                  Sizning "{{ request()->get('key') }}" so'rovingiz bo'yicha hech nima topilmadi.
-              </div>
+                <div class="col-lg-9 p-2 alert alert-primary">
+                    Sizning "{{ request()->get('key') }}" so'rovingiz bo'yicha hech nima topilmadi.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             @endif       
-            
-            
             <div class="col-lg-9 p-2">
             @foreach( $results as $item)
                 <div class="p-2">
@@ -40,78 +40,11 @@
                             <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
                         </small>
                         </p>
-                        
                     </div>
                 </div>
             @endforeach
             </div>
-            
-            
-                        
-            <div class="col-lg-3" >
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Ko'p o'qilganlar</h3>
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <small class="text-muted">
-                                    <i class="fa fa-eye">12</i><br>
-                                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>                          
-                    </aside>
-                </div>
-            </div>  
         </div>
-  </div>
+    </div>
 
 @endsection

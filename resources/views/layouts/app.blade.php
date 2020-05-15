@@ -41,18 +41,6 @@
         <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
-        <li>
-            <form method="GET" action="{{route('search')}}">
-              <div class="form-group">
-                <div class="input-group mb-8">
-                  <input type="text" value="" name="key" class="form-control" placeholder="Qidirish">
-                  <div class="input-group-append">
-                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
-            </form>
-        </li>
 
       </ul>
 
@@ -68,42 +56,55 @@
     <div class="container">
       <div class="row">
 
-      <ul class="navbar-nav ml-auto">
-
-      <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
-      <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('texnologiya')}}">Texnologiya</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
-      <li>
-          <form method="GET" action="#">
-            <div class="form-group">
-              <div class="input-group mb-8">
-                <input type="text" name="key" class="form-control" placeholder="Qidirish">
-                <div class="input-group-append">
-                  <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class=""><i class="fa fa-home"></i></span>
+            <div class="media-body text-primary">
+              <br>
+              <h5>O'zbekiston, Xorazm.</h5>
+              <p>Al-Xorazmiy ko'chasi, 110-uy</p>
             </div>
-          </form>
-      </li>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+            <div class="media-body text-primary">
+              <br>
+              <h5><a class="" href="tel:+998937462676">+998 93 746 26 76</a></h5>
+              <p>Dushanbadan shanbagacha, 10:00 dan 16:00 gacha</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="fa fa-envelope"></i></span>
+            <div class="media-body text-primary">
+              <br>
+              <h5><a class="" href="mailto:admin@admin.com">admin@admin.com</a></h5>
+              <p>Istalgan vaqtda bizga so'rovingizni yuboring!</p>
+            </div>
+          </div>
+        </div>
 
-      </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
+          <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('texnologiya')}}">Texnologiya</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
+        </ul>
 
         <div class="col-lg-12 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.instagram.com/" target="blank" >
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.facebook.com/" target="blank" >
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -111,7 +112,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/" target="blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -119,10 +120,13 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
         </div>
       </div>
     </div>
+    <small class="text-right">
+      <p>created by: Boburbek Rustamov</p>
+    </small>
   </footer>
   <!-- Footer end -->
 

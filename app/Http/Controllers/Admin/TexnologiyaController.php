@@ -17,7 +17,7 @@ class TexnologiyaController extends Controller
      */
     public function index()
     {
-        $texnologiya = texnologiya::all();
+        $texnologiya = texnologiya::latest()->get();
 
         return view('admin/texnologiya/index', compact('texnologiya'));
     }

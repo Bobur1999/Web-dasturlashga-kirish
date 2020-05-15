@@ -17,7 +17,7 @@ class SportController extends Controller
      */
     public function index()
     {
-        $sport = sport::all();
+        $sport = sport::latest()->get();
 
         return view('admin/sport/index', compact('sport'));
     }

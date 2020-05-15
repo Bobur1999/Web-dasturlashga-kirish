@@ -9,8 +9,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-              <h1>YANGILIKLAR</h1>
-              <span class="subheading">eng so'nggilari bizda</span>
+              <h1>Aloqa</h1>
+              <span class="subheading">bizga savolingiz bo'lsa yuboring.</span>
           </div>
         </div>
       </div>
@@ -23,6 +23,9 @@
           @if(session()->has('success'))
               <div class="alert alert-success">
                   {{session()->get('success')}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
               </div>
           @endif
           @if($errors->any())
@@ -31,6 +34,9 @@
                       @foreach($errors->all() as $error)
                           <li>{{$error}}</li>
                       @endforeach
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                   </ul>
               </div>
           @endif
@@ -66,24 +72,27 @@
 
         <div class="col-lg-4">
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <span class=""><i class="fa fa-home"></i></span>
             <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
+              <br>
+              <h3>O'zbekiston, Xorazm.</h3>
+              <p>Al-Xorazmiy ko'chasi, 110-uy</p>
             </div>
           </div>
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <span class="contact-info__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
             <div class="media-body">
-              <h3><a href="tel:454545654">00 (440) 9865 562</a></h3>
-              <p>Mon to Fri 9am to 6pm</p>
+              <br>
+              <h3><a class="text-dark" href="tel:+998937462676">+998 93 746 26 76</a></h3>
+              <p>Dushanbadan shanbagacha, 10:00 dan 16:00 gacha</p>
             </div>
           </div>
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <span class="contact-info__icon"><i class="fa fa-envelope"></i></span>
             <div class="media-body">
-              <h3><a href="mailto:support@colorlib.com">support@colorlib.com</a></h3>
-              <p>Send us your query anytime!</p>
+              <br>
+              <h3><a class="text-dark" href="mailto:admin@admin.com">admin@admin.com</a></h3>
+              <p>Istalgan vaqtda bizga so'rovingizni yuboring!</p>
             </div>
           </div>
         </div>

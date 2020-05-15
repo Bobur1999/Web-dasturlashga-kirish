@@ -1,4 +1,4 @@
-@extends('layouts.admin', ['title' => "admin qism"])
+@extends('layouts.admin', ['title' => "ADMIN -> Xabarlar"])
 
 @section('content')
 <div class="card shadow mb-4">
@@ -9,8 +9,11 @@
     </div>
     <div class="card-body">
         @if(session()->has('delete'))
-            <div class="alert alert-danger">
+            <div class="alert alert-danger alert-dismissible fade show">
                 {{session()->get('delete')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         @endif
         <table class="table table-bordered">
@@ -29,6 +32,7 @@
                     <td>{{$item->created_at->format('H:i d/m/Y')}}</td>
                     <td>{{$item->status ? 'O`qilgan' : 'O`qilmagan'}}</td>
                     <td>
+                    
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <a href="{{route('admin.feedbacks.show', $item->id)}}" class="btn btn-primary">
                                 <i class="fa fa-eye"></i> Ko'rish
@@ -45,6 +49,7 @@
                               </div>
                             </div>
                         </div>
+                        
                     </td>
                 </tr>
                 @endforeach

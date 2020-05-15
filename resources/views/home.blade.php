@@ -18,11 +18,9 @@
   </header>
 
   <!-- Main Content -->
-  <div class="container">
+<div class="container">
     <div class="row">
-      
-      <div class="col-lg-9">
-        
+        <div class="col-lg-8">
         <!-- carousel begin -->
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -34,73 +32,29 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     @foreach($mahalla as $item)
-                    <div class="card bg-dark text-white">
+                    <div class=" bg-dark text-white">
                         <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
-                        <div class="card-img-overlay">
-                        <h5 class="card-title">{{$item->title}}</h5>
-                        <p class="card-text">{{$item->short}}</p>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <i class="fa fa-eye">{{$item -> views}}</i>
-                                ||
-                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
-                            </small>
-                        </p>
-                        </div>
                     </div>
                     @endforeach
                 </div>
                 <div class="carousel-item">
                     @foreach($dunyo as $item)
-                    <div class="card bg-dark text-white">
+                    <div class=" bg-dark text-white">
                         <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
-                        <div class="card-img-overlay">
-                        <h5 class="card-title">{{$item->title}}</h5>
-                        <p class="card-text">{{$item->short}}</p>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <i class="fa fa-eye">{{$item -> views}}</i>
-                                ||
-                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
-                            </small>
-                        </p>
-                        </div>
                     </div>
                     @endforeach
                 </div>
                 <div class="carousel-item">
                     @foreach($texnologiya as $item)
-                    <div class="card bg-dark text-white">
+                    <div class=" bg-dark text-white">
                         <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
-                        <div class="card-img-overlay">
-                        <h5 class="card-title">{{$item->title}}</h5>
-                        <p class="card-text">{{$item->short}}</p>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <i class="fa fa-eye">{{$item -> views}}</i>
-                                ||
-                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
-                            </small>
-                        </p>
-                        </div>
                     </div>
                     @endforeach
                 </div>
                 <div class="carousel-item">
                     @foreach($sport as $item)
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">
-                        <div class="card-img-overlay">
-                        <h5 class="card-title">{{$item->title}}</h5>
-                        <p class="card-text">{{$item->short}}</p>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <i class="fa fa-eye">{{$item -> views}}</i>
-                                ||
-                                <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
-                            </small>
-                        </p>
-                        </div>
+                    <div class=" bg-dark text-white">
+                        <img class="card-img" src="{{'/storage/'.$item->img}}" width="800px" height="450px" alt="Card image">                        
                     </div>
                     @endforeach
                 </div>
@@ -109,82 +63,32 @@
         </div>
         <!-- carousel end -->
 
-      </div>
-      
-      <div class="col-lg-3" >
-        <div class="blog_right_sidebar">
-          <aside class="single_sidebar_widget popular_post_widget">
-            <h3 class="widget_title">Ko'p o'qilganlar</h3>
-            <div class="media post_item">
-                <img width="80px" src="thumb" alt="post">
-                <div class="media-body">
-                    <a href="">
-                    <h3>title</h3>
-                    </a>
-                    <p>
-                    <small class="text-muted">
-                        <i class="fa fa-eye">12</i><br>
-                        <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                    </small>
-                    </p>
-                </div>
-            </div>
-
-            <div class="media post_item">
-                <img width="80px" src="thumb" alt="post">
-                <div class="media-body">
-                    <a href="">
-                    <h3>title</h3>
-                    </a>
-                    <p>
-                    <i class="fa fa-eye">12</i>
-                    ||
-                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                    </p>
-                </div>
-            </div>
-
-            <div class="media post_item">
-                <img width="80px" src="thumb" alt="post">
-                <div class="media-body">
-                    <a href="">
-                    <h3>title</h3>
-                    </a>
-                    <p>
-                    <i class="fa fa-eye">12</i>
-                    ||
-                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                    </p>
-                </div>
-            </div>
-
-            <div class="media post_item">
-                <img width="80px" src="thumb" alt="post">
-                <div class="media-body">
-                    <a href="">
-                    <h3>title</h3>
-                    </a>
-                    <p>
-                    <i class="fa fa-eye">12</i>
-                    ||
-                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                    </p>
-                </div>
-            </div>                          
-          </aside>
         </div>
-      </div>
-
+            <div class="col-lg-4">
+            <small class="text-muted">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates voluptatum atque, nemo praesentium culpa eum cum numquam consequatur quos quas ex, accusantium, quod adipisci saepe velit. Odit, necessitatibus deserunt.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptas quae quod illo tempora iure enim! Fugiat fugit dolor molestiae minus rem qui assumenda, molestias culpa esse deserunt, officiis consequuntur.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, possimus voluptas error veniam culpa vel officia ipsa nulla quae optio, quibusdam ut labore iusto minima. Nulla tenetur blanditiis placeat esse.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia commodi hic veritatis corrupti voluptatem quo a corporis assumenda molestias, libero atque, exercitationem eaque ipsam est? Nam necessitatibus molestias consequatur commodi?
+                </p>
+                <h6 class="text-right">
+                    Jhon Doe
+                </h6>
+            </small>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <div class="container">
+  
+<div class="container">
     <div class="row">
-
-        @foreach( $union as $item)
+        <div class="row col-lg-12">
+        @foreach( $a as $item)
         <div class="col-sm-6 p-2">
-            <div class="">
-                <img class="mr-3" width="200px" src="{{ '/storage/'.$item->thumb }}" alt="post">
+            <div class="media">
+                <img class="mr-3" width="150px" src="{{ '/storage/'.$item->thumb }}" alt="post">
                 <div class="media-body">
                     <a href="{{route('batafsil1', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
                     <p class="card-text">{{$item->short}}</p>
@@ -200,7 +104,64 @@
             </div>
         </div>
         @endforeach
-    
+        @foreach( $b as $item)
+        <div class="col-sm-6 p-2">
+            <div class="media">
+                <img class="mr-3" width="150px" src="{{ '/storage/'.$item->thumb }}" alt="post">
+                <div class="media-body">
+                    <a href="{{route('batafsil2', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                    <p class="card-text">{{$item->short}}</p>
+                    <p class="card-text">
+                    <small class="text-muted">
+                        <i class="fa fa-eye">{{$item -> views}}</i>
+                        ||
+                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                    </small>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @foreach( $c as $item)
+        <div class="col-sm-6 p-2">
+            <div class="media">
+                <img class="mr-3" width="150px" src="{{ '/storage/'.$item->thumb }}" alt="post">
+                <div class="media-body">
+                    <a href="{{route('batafsil3', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                    <p class="card-text">{{$item->short}}</p>
+                    <p class="card-text">
+                    <small class="text-muted">
+                        <i class="fa fa-eye">{{$item -> views}}</i>
+                        ||
+                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                    </small>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @foreach( $d as $item)
+        <div class="col-sm-6 p-2">
+            <div class="media">
+                <img class="mr-3" width="150px" src="{{ '/storage/'.$item->thumb }}" alt="post">
+                <div class="media-body">
+                    <a href="{{route('batafsil4', $item -> id)}}" class=""><h5 class="card-title">{{$item->title}}</h5></a>
+                    <p class="card-text">{{$item->short}}</p>
+                    <p class="card-text">
+                    <small class="text-muted">
+                        <i class="fa fa-eye">{{$item -> views}}</i>
+                        ||
+                        <i class="fa fa-calendar">{{$item->created_at->format('H:i|d/m/y')}}</i>
+                    </small>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        </div>
     </div>
   </div>
 

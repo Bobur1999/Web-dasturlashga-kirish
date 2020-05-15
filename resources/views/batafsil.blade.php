@@ -33,7 +33,6 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         
       <ul class="navbar-nav ml-auto">
-
         <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
         <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
@@ -41,19 +40,6 @@
         <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
         <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
-        <li>
-            <form method="GET" action="#">
-              <div class="form-group">
-                <div class="input-group mb-8">
-                  <input type="text" name="key" class="form-control" placeholder="Qidirish">
-                  <div class="input-group-append">
-                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
-            </form>
-        </li>
-
       </ul>
 
       </div>
@@ -79,86 +65,22 @@
     <div class="container">
         <div class="row">
 
-        <div class="col-lg-9 p-1">
-                <div class="card ">
-                    <img class="card-img-top" width="" src="{{ '/storage/'.$item->img }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$item -> title}}</h5>
-                        <p class="card-text">{{$item -> content}}</p>
-                        <p class="card-text">
-                        <small class="text-muted">
-                            <i class="fa fa-eye">{{$item -> views}}</i><br>
-                            <i class="fa fa-calendar">{{$item -> created_at -> format('H:i|d/m/y')}}</i>
-                        </small>
-                        </p>
-                    </div>
-                </div>
+            <div class="col-lg-9 p-1">
+              <div class="card ">
+                  <img class="card-img-top" width="" src="{{ '/storage/'.$item->img }}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">{{$item -> title}}</h5>
+                      <p class="card-text">{{$item -> content}}</p>
+                      <p class="card-text">
+                      <small class="text-muted">
+                          <i class="fa fa-eye">{{$item -> views}}</i><br>
+                          <i class="fa fa-calendar">{{$item -> created_at -> format('H:i|d/m/y')}}</i>
+                      </small>
+                      </p>
+                  </div>
+              </div>
             </div>
-            
-            <div class="col-lg-3" >
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Ko'p o'qilganlar</h3>
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <small class="text-muted">
-                                    <i class="fa fa-eye">12</i><br>
-                                    <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media post_item">
-                            <img width="80px" src="thumb" alt="post">
-                            <div class="media-body">
-                                <a href="">
-                                <h3>title</h3>
-                                </a>
-                                <p>
-                                <i class="fa fa-eye">12</i>
-                                ||
-                                <i class="fa fa-calendar">20:00 | 20.04.2020</i>
-                                </p>
-                            </div>
-                        </div>                          
-                    </aside>
-                </div>
-            </div>         
-
+                    
         </div>
     </div>
   
@@ -169,28 +91,13 @@
       <div class="row">
 
       <ul class="navbar-nav ml-auto">
-
-      <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
-      <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('texnologiya')}}">Texnologiya</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
-<!--       
-      <li>
-          <form method="GET" action="#">
-            <div class="form-group">
-              <div class="input-group mb-8">
-                <input type="text" name="key" class="form-control" placeholder="Qidirish">
-                <div class="input-group-append">
-                  <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
-            </div>
-          </form>
-      </li> -->
-
+        <li class="nav-item"><a class="nav-link" href="{{route('home')}}"> <i class="fa fa-home"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('mahalliy')}}">Mahalliy</a></li>     
+        <li class="nav-item"><a class="nav-link" href="{{route('dunyo')}}">Dunyo</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('texnologiya')}}">Texnologiya</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('sport')}}">Sport</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Biz haqimizda</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('aloqa')}}">Aloqa</a></li>
       </ul>
 
         <div class="col-lg-12 col-md-10 mx-auto">

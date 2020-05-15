@@ -19,13 +19,10 @@ class SiteController extends Controller
         $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
 
 
-        $a = mahalla::orderBy('id', 'DESC');
-        $b = dunyo::orderBy('id', 'DESC')->union($a);          
-        $c = sport::orderBy('id', 'DESC')->union($b);
-        $d = texnologiya::orderBy('id', 'DESC')->union($c)->get();
-                        
-        $union = $d;
-
+        $a = mahalla::orderBy('id', 'DESC')->limit(4)->get();
+        $b = dunyo::orderBy('id', 'DESC')->limit(4)->get();          
+        $c = texnologiya::orderBy('id', 'DESC')->limit(4)->get();
+        $d = sport::orderBy('id', 'DESC')->limit(4)->get();
 
         return view('home',[
             
@@ -33,7 +30,10 @@ class SiteController extends Controller
             'dunyo'=>$dunyo,
             'texnologiya'=>$texnologiya,
             'sport'=>$sport,
-            'union'=>$union
+            'a'=>$a,
+            'b'=>$b,
+            'c'=>$c,
+            'd'=>$d
             
         ]);
     }
@@ -69,27 +69,87 @@ class SiteController extends Controller
     // Yangiliklar
     public function mahalliy()
     {
-        $mahalla = mahalla::orderBy('id', 'DESC')->get();
+        $mahalla = mahalla::orderBy('id', 'DESC')->limit(1)->get();
+        $dunyo = dunyo::orderBy('id', 'DESC')->limit(1)->get();
+        $texnologiya = texnologiya::orderBy('id', 'DESC')->limit(1)->get();
+        $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
 
-        return view('mahalliy', compact('mahalla'));
+        $news = mahalla::orderBy('id', 'DESC')->get();
+
+        $views = mahalla::orderBy('views', 'DESC')->limit(4)->get();     
+
+        return view('mahalliy',[
+            
+            'mahalla'=>$mahalla,
+            'dunyo'=>$dunyo,
+            'texnologiya'=>$texnologiya,
+            'sport'=>$sport,
+            'news'=>$news,
+            'views'=>$views
+        ]);
     }
     public function dunyo()
     {
-        $dunyo = dunyo::all();
+        $mahalla = mahalla::orderBy('id', 'DESC')->limit(1)->get();
+        $dunyo = dunyo::orderBy('id', 'DESC')->limit(1)->get();
+        $texnologiya = texnologiya::orderBy('id', 'DESC')->limit(1)->get();
+        $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
 
-        return view('dunyo', compact('dunyo'));
+        $news =dunyo::orderBy('id', 'DESC')->get();
+
+        $views = dunyo::orderBy('views', 'DESC')->limit(4)->get();     
+
+        return view('dunyo',[
+            
+            'mahalla'=>$mahalla,
+            'dunyo'=>$dunyo,
+            'texnologiya'=>$texnologiya,
+            'sport'=>$sport,
+            'news'=>$news,
+            'views'=>$views
+        ]);
     }
     public function texnologiya()
     {
-        $texnologiya = texnologiya::all();
+        $mahalla = mahalla::orderBy('id', 'DESC')->limit(1)->get();
+        $dunyo = dunyo::orderBy('id', 'DESC')->limit(1)->get();
+        $texnologiya = texnologiya::orderBy('id', 'DESC')->limit(1)->get();
+        $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
 
-        return view('texnologiya', compact('texnologiya'));
+        $news = texnologiya::orderBy('id', 'DESC')->get();
+
+        $views = texnologiya::orderBy('views', 'DESC')->limit(4)->get();     
+
+        return view('texnologiya',[
+            
+            'mahalla'=>$mahalla,
+            'dunyo'=>$dunyo,
+            'texnologiya'=>$texnologiya,
+            'sport'=>$sport,
+            'news'=>$news,
+            'views'=>$views
+        ]);
     }
     public function sport()
     {
-        $sport = sport::all();
+        $mahalla = mahalla::orderBy('id', 'DESC')->limit(1)->get();
+        $dunyo = dunyo::orderBy('id', 'DESC')->limit(1)->get();
+        $texnologiya = texnologiya::orderBy('id', 'DESC')->limit(1)->get();
+        $sport = sport::orderBy('id', 'DESC')->limit(1)->get();
 
-        return view('sport', compact('sport'));
+        $news = sport::orderBy('id', 'DESC')->get();
+
+        $views = sport::orderBy('views', 'DESC')->limit(4)->get();     
+
+        return view('sport',[
+            
+            'mahalla'=>$mahalla,
+            'dunyo'=>$dunyo,
+            'texnologiya'=>$texnologiya,
+            'sport'=>$sport,
+            'news'=>$news,
+            'views'=>$views
+        ]);
     }
     //Mahalliy batafsil qismi
     public function batafsil1($id)
@@ -127,34 +187,63 @@ class SiteController extends Controller
         
         return view('batafsil', compact('item'));
     }
-
-    public function search(Request $request)
+    //search qismi
+    public function search1(Request $request)
     {
         $key = $request->get('key');
         $key = '%'.trim($key).'%';
 
-        $a = mahalla::where('title', 'LIKE', $key)
-                    ->orWhere('short', 'LIKE', $key)
-                    ->orWhere('content', 'LIKE', $key);
-
-        $b = dunyo::where('title', 'LIKE', $key)
+        $mahalla = mahalla::where('title', 'LIKE', $key)
                     ->orWhere('short', 'LIKE', $key)
                     ->orWhere('content', 'LIKE', $key)
-                    ->union($a);
-                   
-        $c = sport::where('title', 'LIKE', $key)
-                    ->orWhere('short', 'LIKE', $key)
-                    ->orWhere('content', 'LIKE', $key)
-                    ->union($b);
-                    
-        $d = texnologiya::where('title', 'LIKE', $key)
-                    ->orWhere('short', 'LIKE', $key)
-                    ->orWhere('content', 'LIKE', $key)
-                    ->union($c)
                     ->get();
 
-        $results = $d;
+        $results = $mahalla;
 
+        return view('search', compact('results'));
+    }
+
+    public function search2(Request $request)
+    {
+        $key = $request->get('key');
+        $key = '%'.trim($key).'%';
+
+        $dunyo = dunyo::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->get();
+
+        $results = $dunyo;
+
+        return view('search', compact('results'));
+    }
+
+    public function search3(Request $request)
+    {
+        $key = $request->get('key');
+        $key = '%'.trim($key).'%';
+
+        $texnologiya = texnologiya::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->get();
+
+        $results = $texnologiya;
+
+        return view('search', compact('results'));
+    }
+
+    public function search4(Request $request)
+    {
+        $key = $request->get('key');
+        $key = '%'.trim($key).'%';
+
+        $sport = sport::where('title', 'LIKE', $key)
+                    ->orWhere('short', 'LIKE', $key)
+                    ->orWhere('content', 'LIKE', $key)
+                    ->get();
+
+        $results = $sport;
 
         return view('search', compact('results'));
     }

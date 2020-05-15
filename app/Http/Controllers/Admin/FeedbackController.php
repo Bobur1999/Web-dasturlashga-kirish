@@ -10,10 +10,9 @@ class FeedbackController extends Controller
 {
     Public function index()
     {
-        $items = feedback::latest()->paginate(10);
-        $links = $items->links();
+        $items = feedback::latest()->get();
 
-        return view('admin.feedbacks.index', compact('items', 'links'));
+        return view('admin.feedbacks.index', compact('items'));
     }
 
     public function show($id)

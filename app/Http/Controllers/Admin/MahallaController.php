@@ -17,7 +17,7 @@ class MahallaController extends Controller
      */
     public function index()
     {
-        $mahalla = mahalla::all();
+        $mahalla = mahalla::latest()->get();
 
         return view('admin/mahalla/index', compact('mahalla'));
     }

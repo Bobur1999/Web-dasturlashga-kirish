@@ -1,4 +1,4 @@
-@extends('layouts/admin', ['title' => "admin qism"])
+@extends('layouts/admin', ['title' => "ADMIN -> Texnologiya yangiliklari"])
 @section('content')
 
 <div class="card shadow mb-4">
@@ -10,14 +10,20 @@
         
     </div>
         @if(session()->has('success'))
-            <div class="aler alert-success">
+            <div class="alert alert-success alert-dismissible fade show">
                 {{session()->get('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         @endif
 
         @if(session()->has('delete'))
-            <div class="aler alert-danger">
+            <div class="alert alert-danger alert-dismissible fade show">
                 {{session()->get('delete')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         @endif
     <div class="card-body">
@@ -25,7 +31,7 @@
             <thead>
                 <th width="100px">Rasm</th>
                 <th>Sarlavha</th>
-                <th width="130px">Amallar</th>
+                <th width="180px">Amallar</th>
             </thead>
             <tbody>
                
@@ -38,19 +44,27 @@
                         {{$item->title}}  
                     </td>
                     <td>
-                        <a class="btn btn-sm btn-white float-left " href="{{route('admin.texnologiya.show', $item->id)}}">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        
-                        <a class="btn float-left btn-sm btn-white" href="{{route('admin.texnologiya.edit', ['id' => $item-> id])}}">
-                            <i class="fa fa-edit"></i> 
-                        </a>
-                        
-                        <form method="POST" action="{{route('admin.texnologiya.destroy', ['id' => $item-> id])}}">
-                            @csrf
-                            @method('delete')
-                            <button class= "btn btn-sm btn-white"> <i class="fa fa-trash"></i></button>
-                        </form>
+
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <a href="{{route('admin.texnologiya.show', $item->id)}}" class="btn btn-primary">
+                                <i class="fa fa-eye"></i> Ko'rish
+                            </a>
+                            <div class="btn-group" role="group">
+                              <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="{{route('admin.texnologiya.edit', ['id' => $item-> id])}}">
+                                    <i class="fa fa-edit"></i> Tahrirlash 
+                                </a>
+                                <form method="POST" action="{{route('admin.texnologiya.destroy', ['id' => $item-> id])}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> O'chirish</button>
+                                </form> 
+                              </div>
+                            </div>
+                        </div>
+
                     </td>
                 </tr>
                 @endforeach

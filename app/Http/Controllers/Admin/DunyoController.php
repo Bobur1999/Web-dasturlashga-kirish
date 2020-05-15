@@ -17,7 +17,7 @@ class DunyoController extends Controller
      */
     public function index()
     {
-        $dunyo=dunyo::all();
+        $dunyo=dunyo::latest()->get();
 
         return view('admin/dunyo/index', compact('dunyo'));
     }

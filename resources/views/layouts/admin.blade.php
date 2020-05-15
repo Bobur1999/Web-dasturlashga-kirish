@@ -42,8 +42,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="{{route('admin.dashboard')}}">
-          <span>Bosh sahifa</span>
+        <a class="nav-link" target="blank" href="{{route('home')}}">
+          <i class="fa fa-home"></i>
+          <span>Dengiz.uz</span>
         </a>
       </li>
 
@@ -178,13 +179,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a class="dropdown-item" href="{{route('admin.profil.index')}}">
+                <i class="fas fa-user-cog"></i>
                   Sozlash
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                <i class="fas fa-sign-out-alt"></i>
                   Chiqish
                 </a>
               </div>
